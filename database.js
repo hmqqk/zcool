@@ -5,7 +5,7 @@
     settings = require('./settings');
 
     client = null;
-   //å¼•å…¥mysqlå¼•æ“
+   //ÒıÈëmysqlÒıÇæ
     mysql = require('mysql');
 
     exports.getDbCon = function() {
