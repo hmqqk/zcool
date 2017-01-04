@@ -1,0 +1,104 @@
+.footer{
+  position:relative;
+  font-size:12px;
+  .f1{
+    position:relative;
+    width:100%;
+    height:38px;
+    padding-top:8px;
+    text-align:center;
+    background:#FFBA00;
+    form{
+      position:relative;
+      width: 358px;
+      margin:0 auto;
+    }
+    .chooseItems{
+      position:relative;
+      left:0;
+      width: 52px;
+      height: 31px;
+      border:none;
+      padding-left:15px;
+    }
+    .items{
+      position:absolute;
+      display:none;
+      top:30px;
+      z-index:10;
+      padding-bottom:10px;
+      background:#fff;
+      a{
+        display:block;
+        width:67px;
+        color:gray;
+        line-height:20px;
+      }
+    }
+    i{
+      position:relative;
+      display:inline-block;
+      top:2px;
+      left: -20px;
+      width:10px;
+      height:10px;
+      background:url(../images/angle.png) no-repeat 0 0;
+    }
+    input{
+      position: relative;
+      width: 250px;
+      height: 31px;
+      left: -9px;
+      border: none;
+    }
+    .search2{
+      position: relative;;
+      left:-9px;
+      width: 31px;
+      height: 31px;
+      float:right;
+      background: #FFF url(../images/bs.png) no-repeat center 4px;
+      border:none;
+    }
+  }
+  .f2{
+    width:100%;
+    height:218px;
+    background:#4E4E4E;
+    .main{
+      width:924px;
+      margin:0 auto;
+      padding-top:30px;
+      .one{
+        li{
+          float:left;
+          list-style-type:none;
+          width:100px;
+          height:14.4px;
+          color:white;
+          text-align:left;
+          display:block;
+          a{
+            display:block;
+            color:#AAAAAA;
+            text-align:left;
+            line-height:20px;
+          }
+        }
+      }
+      div{
+        float:right;
+        label{
+          color:white;
+        }
+        p{
+          color:#AAAAAA;
+          a{
+            color:#AAAAAA;
+          }
+        }
+      }
+    }
+
+  }
+}
