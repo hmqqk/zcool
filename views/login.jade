@@ -1,0 +1,55 @@
+doctype html
+html
+    head
+        title login
+        link(rel='stylesheet', href='/stylesheets/global.css')
+        link(rel='stylesheet', href='/stylesheets/footer.css')
+        script(type='text/javascript', src='/javascripts/jquery-1.10.2.min.js')
+        script(type='text/javascript', src='/javascripts/base.js')
+        script(type='text/javascript', src='/javascripts/passport-v1.0.3.js')
+        script(type='text/javascript', src='/javascripts/passport.js')
+
+    body
+        include header
+        div.clear
+        div.loginMain
+            div.loginNav
+               a.login2.onLogin(href="") 登录
+               a.details(href="") 资料
+            div.meMsg
+                img.loginLogo22(src="../images/smallLogo.png")
+                div.loginText
+                     p Hi，
+                        label 未登录酷友
+                        ，登录站酷网与
+                        label 4,271,687
+                        +位设计师，一起交流设计分享快乐吧！
+                     p.smallText Hi~friend, you have not logged in yet. Please log in ZCOOL and share your designing experience and have fun with 4,271,687 + designers!
+            form.loginMsgdiv
+                div.loginInput
+                   label 用户名/邮箱
+                   input(type="text",name="user")
+                 div.loginInput
+                   label 密码
+                   input(type="password",name="pass")
+                div.warnings
+                   input.autolog(type="checkbox")
+                   &nbsp;
+                   label 下次自动登录
+                   &nbsp;
+                   label.smallText 使用公用电脑勿勾选
+                input.doLogin(type="submit",value="登录")
+                label.findMsg
+                    a(href="") 忘记密码 &nbsp;|
+                      &nbsp;
+                    a(href="") 注册
+                br
+                a.qq(href="")
+                    img(src="../images/connect_qq_24.png")
+                a.weibo(href="")
+                    img(src="../images/connect_weibo_24.png")
+                div.clear
+        include footer
+
+
+
