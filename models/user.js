@@ -28,7 +28,7 @@ User.prototype.save = function  save(callback) {
             throw err;
         } else {
             //返回用户id
-            return callback(err, uuid, fields);
+            return callback(err, results, fields);
         }
     });
 };
