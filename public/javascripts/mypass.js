@@ -1,19 +1,40 @@
 // JavaScript Document
+//register页面的表单验证工作
 $(function() {
 
-    jQuery.HUIhover = function(obj) {$(obj).hover(function() {$(this).addClass("hover");},function() {$(this).removeClass("hover");});};
-    /*表单得到失去焦点*/
-    jQuery.HUIfocusblur = function(obj) {
-        $(obj).focus(function() {$(this).addClass("focus").removeClass("inputError");});
-        $(obj).blur(function() {$(this).removeClass("focus");});
-    };
 
 	$(".messageDetail").Validform({
-		tiptype:3,
+		tiptype:3,//3=>side tip(siblings; with default pop)
+		beforeSubmit:function(curform){
+			//在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+			//这里明确return false的话表单将不会提交;
+			//if enter return
+			if(!$('#password').attr('ignore')){
+				var value = $('#password').val();
+				if(checkPwd.checkItem1(value) == 0){
+					$('#password').parent().find(".Validform_checktip").html(checkPwd.msg.msg0).removeClass("Validform_right Validform_loading").addClass("Validform_checktip Validform_wrong");
+					$('#password').removeClass('Validform_error').addClass('Validform_error');
+					return false;
+				}else if(checkPwd.checkItem2(value) == 0){
+					$('#password').parent().find(".Validform_checktip").html(checkPwd.msg.msg1).removeClass("Validform_right Validform_loading").addClass("Validform_checktip Validform_wrong");
+					$('#password').removeClass('Validform_error').addClass('Validform_error');
+					return false;
+				}else if( checkPwd.checkItem3(value) == 0){
+					$('#password').parent().find(".Validform_checktip").html(checkPwd.msg.msg2).removeClass("Validform_right Validform_loading").addClass("Validform_checktip Validform_wrong");
+					$('#password').removeClass('Validform_error').addClass('Validform_error');
+					return false;
+				}
+				if($.Datatype.m.test($('#email').val()) ){
+					if($('#phoneCodeInput').val() == ''){
+						$('#phoneCodeInput').parent().find(".Validform_checktip").html("请输入验证码").removeClass("Validform_right Validform_loading").addClass("Validform_checktip Validform_wrong");
+						$('#phoneCodeInput').removeClass('Validform_error').addClass('Validform_error');
+						return false;
+					}
+				}
+			}
+		}
 	});
-    jQuery('.email').bind('keyup blur',function(event){
-        //if enter return
-    });
+
 	//TODO 验证密码
 	var checkPwd = {
 	    /**
