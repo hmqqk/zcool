@@ -27,6 +27,7 @@ html
                     li
                         a(href="")
                             img(src="../images/slider6.jpg")
+
             div.voice
                 span 酷友最新动态:
                 ul.trendDiv
@@ -90,9 +91,48 @@ html
                         在&nbsp;刚刚&nbsp;原创作品《
                         a(href="") 传家日历｜新一代国民日历，你的2017生活指南
                         》推荐给了粉丝
+
+
                 div.rightButton
-                    a.up(href="")
-                    a.down(href="")
+                    a.up(href="javascript:void(0)")
+                    a.down(href="javascript:void(0)")
+            script.
+                $(function () {
+                    $(".voice").hover(function () {
+                        window.clearTimeout(status_timer);
+                        console.log(status_timer);
+                    }, function () {
+                        status_timer = window.setTimeout("status_scroll()", 5000);
+                    });
+                    status_timer = window.setTimeout("status_scroll()", 1000);
+                })
+
+                var status_timer;
+                function status_scroll() {
+                    $(".voice ul").animate({top: "-46px"}, 1000, function () {
+                        $(".voice li:first").appendTo(".voice ul");
+                        $(".voice ul").css("top", "0");
+                    });
+                    status_timer = window.setTimeout("status_scroll()", 5000);//轮换速度
+                }
+                function do_status_scroll(n) {
+                    if (n == 0) {
+                        $(".voice ul").animate({top: "-46px"}, 1000, function () {
+                            $(".voice li:first").appendTo(".voice ul");
+                            $(".voice ul").css("top", "0");
+                        });
+                    } else if (n == 1) {
+                        $(".voice li:last").prependTo(".voice ul");
+                        $(".voice ul").css("top", "-46px");
+                        $(".voice ul").animate({top: "0px"}, 1000);
+                    }
+                }
+                $(".up").click(function(){
+                    do_status_scroll(0);
+                });
+                $(".down").click(function(){
+                    do_status_scroll(1)
+                });
 
             div.lists1
                 ul
