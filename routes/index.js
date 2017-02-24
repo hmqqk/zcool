@@ -26,6 +26,8 @@ router.post('/register', function(req, res, next) {
   User.get(newUser.name,newUser.password, function (err, user) {
     // 如果不存在则新增用户
     newUser.save(function (err) {
+      console.log("uglygirl");
+      console.log(newUser.name);
       res.send({"username":newUser.name});
     });
   });
