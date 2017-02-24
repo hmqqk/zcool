@@ -110,7 +110,7 @@
 		v:"所填信息没有经过验证，请稍后…",
 		p:"正在提交数据…"
 	}
-	$.Tipmsg=tipmsg;
+	$.Tipmsg=tipmsg;//变量赋值
 	
 	var Validform=function(forms,settings,inited){
 		var settings=$.extend({},Validform.defaults,settings);
@@ -148,7 +148,7 @@
 				var subpost=arguments[1];
 				Validform.util.check.call(this,$this,subpost);
 			});
-			
+			//键盘事件触发的动作
 			$this.delegate(":text","keypress",function(event){
 				if(event.keyCode==13 && $this.find(":submit").length==0){
 					$this.submit();
@@ -193,7 +193,7 @@
 	}
 	
 	Validform.util={
-		dataType:{
+		dataType:{//数据类型用正则表达式去表示
 			"*":/[\w\W]+/,
 			"*6-16":/^[\w\W]{6,16}$/,
 			"n":/^\d+$/,
@@ -208,7 +208,7 @@
 		
 		toString:Object.prototype.toString,
 		
-		isEmpty:function(val){
+		isEmpty:function(val){//判断是否为空
 			return val==="" || val===$.trim(this.attr("tip"));
 		},
 		

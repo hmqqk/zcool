@@ -1,8 +1,8 @@
 (function($){    
 	$.fn.slideJ = function(options){        
 		var defaults = {//默认属性
-			width:$(this).width(),
-			height:$(this).height(),
+			width:$(this).width(),//image显示区域的宽度
+			height:$(this).height(),//image显示区域的高度
 			nav:".slideNav",
 			leftBtn:".slideLeft",
 			rightBtn:".slideRight",
@@ -15,9 +15,9 @@
 		
 		var sildeElem = $(this),//滑动模块
 			slideCl = sildeElem.find("li"),
-			slideNavCl = $(options.nav).find("a"),
+			slideNavCl = $(options.nav).find("a"),//这个应该是图片下方的圆圈（可调整如何控制）从而显示哪个导航的吧
 			total = slideCl.size(),//图片数量
-			nowNum = 1,
+			nowNum = 1,//默认显示第一幅图片
 			active = false;
 		if(total<=1){return;}//数量小于等于1不做操作
 		
@@ -30,7 +30,7 @@
 		
 		
 		//取消A标签虚线框
-		var aHideFocus = options.nav+" a"+","+options.leftBtn+" a,"+options.rightBtn+" a,"+options.leftBtn+","+options.rightBtn;
+		var aHideFocus = options.nav+" a"+","+options.leftBtn+" a,"+options.rightBtn+" a,"+options.leftBtn+","+options.rightBtn;//拼接操作
 		$(aHideFocus).attr("hideFocus","hideFocus");
 		
 		
@@ -59,7 +59,7 @@
 				position:"absolute"
 			});
 			
-			slideNavCl.eq(0).addClass("selected");
+			slideNavCl.eq(0).addClass("selected");//起初设置默认显示第一个圆圈的图片
 			slideCl.css({opacity:0,"z-index":"0"});
 			slideCl.eq(0).css({opacity:1,"z-index":"1"});
 			var interval = setInterval(checkNum,options.time);
@@ -115,6 +115,7 @@
 				}
 			}
 			function toggle_scroll(n){
+				//图片自动触发渐隐渐显时active=true;
 				active = true;
 				if(n!=null){
 					nowNum = n;
@@ -165,7 +166,7 @@
 		}
 		//------------左右滑动--------------------
 		function slideAnimateJ(){
-			
+			//这个代码我要尝试完成
 		}
 	}  
 })(jQuery);
