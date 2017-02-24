@@ -87,7 +87,7 @@ $().ready(function() {
         }
         var remember = "0";
         if ($(".autolog").prop('checked')) {
-            remember = "1";
+            remember = "1";//如果勾选了下次自动登录操作
         }
         $(".doLogin").val("登录中...");
         $(".doLogin").attr("disabled", "true");
@@ -98,7 +98,8 @@ $().ready(function() {
             type:"post",
             data:{username:username,password:password,remember:remember},
             success:function(data) {
-                $(SetCookie(userCookieLoginname,data.username));
+                SetCookie('cookieOk','loginOk');
+                SetCookie('userCookieLoginname',data.username);
                 window.location.href = "index";
             },
             error:function(data) {
@@ -108,30 +109,33 @@ $().ready(function() {
 
     }
 
-    $(function () {
-        $(".voice").hover(function () {
-            window.clearTimeout(status_timer);
-        }, function () {
-            status_timer = window.setTimeout(status_scroll(), 5000);
-        });
-        status_timer = window.setTimeout(status_scroll(), 1000);
-    });
-
-
-    //var status_timer;
-    function status_scroll() {
-        $(".voice ul").animate({top: "-46px"}, 1000, function () {
-            $(".voice li:first").appendTo(".voice ul");
-            $(".voice ul").css("top", "0");
-        });
-        status_timer = window.setTimeout("status_scroll()", 5000);//轮换速度
+    function SetCookie(name,value){
+        var exp=new Date();
+        document.cookie=name+'='+value+' ; maxage=-1 ; path=/ ; domain=localhost';
+    }
+    //是否已经登陆
+    function isLogon(){
+        var islogon = false;
+        var allcookie = document.cookie.split('; ');
+        var cookieOk = allcookie[0].split('=')[1];
+        if(cookieOk=='loginOk'){
+            islogon = true;
+            }
+        return islogon;
+    }
+    var cookieOk="";//判断cookie是否存在的标志位（flag）
+    var userCookieLoginname="";			//用户loginname
+    function getCookie(){
+        var allcookie = document.cookie.split('; ');
+        var userCookieLoginname = allcookie[1].split('=')[1];
+        return userCookieLoginname;
     }
 
 
-    if (getCookie().length <= 0) {
-        printUnloginHtml();
-    } else {
+    if (isLogon()) {
         printLoginHtml();
+    } else {
+        printUnloginHtml();
     }
     function printUnloginHtml() {
        $(".userMsg").html("<a class=\"login\" href=\"login\">登录</a>"+"&nbsp;| &nbsp;"+"<a class=\"register\" href=\"register\">注册</a>");
@@ -208,6 +212,7 @@ $().ready(function() {
     });
 
     goTopInit(mainWidth);
+    //在调整窗口大小或者滚动鼠标时都会触发goTopInit(mainWidth)事件
     $(window).resize(function(){goTopInit(mainWidth);});
     $(window).scroll(function(){goTopInit(mainWidth);});
 
@@ -226,6 +231,7 @@ $().ready(function() {
             "left": (winWide - mainWidth) / 2 + mainWidth
         });
     }
+    
 
     //register_part
     $('.sure').click(
@@ -236,9 +242,15 @@ $().ready(function() {
                     url : "http://localhost:5000/register",
                     type : "post",
                     dataType : 'json',
-                    data:{email:$('.email').val(),name:$('.username').val(),password:$('.password').val(),passwordrepeat:$('.password-repeat').val()},
+                    data:{
+                        email:$('.email').val(),
+                        name:$('.username').val(),
+                        password:$('.password').val(),
+                        passwordrepeat:$('.password-repeat').val()
+                    },
                     success : function(data) {
-                        $(SetCookie(userCookieLoginname,data.username));
+                        SetCookie('cookieOk','loginOk');
+                        SetCookie("userCookieLoginname",data.username);
                         window.location.href="index"
                     },
                     error : function(){
