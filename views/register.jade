@@ -4,11 +4,10 @@ html
         title register
         link(rel='stylesheet', href='/stylesheets/global.css')
         script(type='text/javascript', src='/javascripts/jquery-1.10.2.min.js')
+        script(type='text/javascript', src='http://static.geetest.com/static/tools/gt.js')
         script(type='text/javascript', src='/javascripts/Validform_v5.3.2.js')
         script(type='text/javascript', src='/javascripts/jquery.slide-zool.js')
         script(type='text/javascript', src='/javascripts/pwd-strength.js')
-        script(type='text/javascript', src='/javascripts/passport-v1.0.3.js')
-        script(type='text/javascript', src='/javascripts/passport.js')
         script(type='text/javascript', src='/javascripts/mypass.js')
         script(type='text/javascript', src='/javascripts/base.js')
     body
@@ -27,8 +26,7 @@ html
                     form.messageDetail(method="post")
                         div.detailInput
                              input.email.input_text(type="text",placeholder="邮箱|手机",value="",nullmsg="请输入常用邮箱或中国大陆手机",sucmsg="验证通过",ajaxUrl="",tabindex="1",datatype="m|e")
-                            span.Validform_checktip
-                        span.Validform_checktip
+                             span.Validform_checktip
                         div.detailInput
                             input.username.input_text(type="text",placeholder="用户名，4~16个字符，字母/中文/数字/下划线" value="",name="username",nullmsg="请输入用户名",sucmsg="验证通过",tabindex="2",datatype="*",ajaxurl="")
                             span.Validform_checktip.Validform_warning 用户名是您在站酷网的唯一名称
@@ -46,89 +44,7 @@ html
                              input.IEpassword2(type="text",value="设置密码",style="display:none")
                              span.Validform_checktip
                          div.verfication
-                             div.widget
-                                 div.widget_top
-                                 div.widget_content
-                                     div.widget_content_main
-                                         div.wcm_box
-                                             div.wcm_loading
-                                                 div.wcm_loading_icon
-                                                 div.wcm_loading_text 加载中...
-                                             a.wcm_show1
-                                               div.wcs1_1
-                                               div.wcs1_2
-                                             a.wcm_show2
-                                               div.wcs2_1
-                                                   div.gt_cut_fullbg_slice(style="background-position: -157px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -145px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -265px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -277px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -181px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -169px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -241px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -253px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -109px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -97px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -289px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -301px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -85px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -73px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -25px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -37px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -13px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -1px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -121px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -133px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -61px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -49px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -217px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -229px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -205px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -193px -58px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -145px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -157px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -277px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -265px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -169px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -181px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -253px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -241px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -97px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -109px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -301px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -289px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -73px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -85px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -37px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -25px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -1px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -13px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -133px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -121px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -49px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -61px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -229px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -217px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -193px 0px;")
-                                                   div.gt_cut_fullbg_slice(style="background-position: -205px 0px;")
-                                               div.wcs2_2
-                                               div.wcs2_3
-                                             a.wcm_show3
-
-                                             a.wcm_show4
-                                     div.widget_content_info
-                                 div.widget_bottom
-                                     a.refresh_button
-                                        div.refresh_tips 刷新验证
-                                     a.help_button
-                                        div.help_tips 帮助反馈
-                                     a.logo_button
-                                 div.widget_slider
-                                     div.ws_text1 按住左边滑块，拖动完成上方拼图
-                                     div.ws_button
-                                     div.ws_text2.hide 点击上图按钮并沿道路拖动到终点处
-                                     div.ws_text3.hide 移动到此处开始验证
-                                     div.ws_clock.ready
+                             div.geetestArea
                          div.rules
                              input(type="checkbox",name="agree")
                              我已阅读并接受
@@ -139,5 +55,57 @@ html
                              br
                              button.sure(type="button") 马上注册
                              div.yanzhengma
+                             div.row
+                                 div#captcha
+                             script(type='text/javascript', src="https://static.geetest.com/static/tools/gt.js")
+                             script.
+                                 var handlerPopup = function (captchaObj) {
+
+                                     // 成功的回调
+                                     captchaObj.onSuccess(function () {
+                                         var validate = captchaObj.getValidate();
+                                         $.ajax({
+                                             url: "/pc-geetest/validate", // 进行二次验证
+                                             type: "post",
+                                             dataType: "json",
+                                             data: {
+                                                 username: $('.username').val(),
+                                                 password: $('.password').val(),
+                                                 geetest_challenge: validate.geetest_challenge,
+                                                 geetest_validate: validate.geetest_validate,
+                                                 geetest_seccode: validate.geetest_seccode
+                                             },
+                                             success: function (data) {
+                                                 if (data && (data.status === "success")) {
+                                                     //$(document.body).html('<h1>登录成功</h1>');
+                                                 } else {
+                                                    //$(document.body).html('<h1>登录失败</h1>');
+                                                 }
+                                             }
+                                         });
+                                     });
+                                     // 将验证码加到id为captcha的元素里
+                                     captchaObj.appendTo(".verfication");
+                                     // 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
+                                 };
+
+                                 // 验证开始需要向网站主后台获取id，challenge，success（是否启用failback）
+                                 $.ajax({
+                                     url: "/pc-geetest/register?t=" + (new Date()).getTime(), // 加随机数防止缓存
+                                     type: "get",
+                                     dataType: "json",
+                                     success: function (data) {
+                                         // 使用initGeetest接口
+                                         // 参数1：配置参数
+                                         // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它做appendTo之类的事件
+                                         initGeetest({
+                                             gt: data.gt,
+                                             challenge: data.challenge,
+                                             product: "embed", // 产品形式，包括：float，embed，popup。注意只对PC版验证码有效
+                                             offline: !data.success // 表示用户后台检测极验服务器是否宕机，一般不需要关注
+                                             // 更多配置参数请参见：http://www.geetest.com/install/sections/idx-client-sdk.html#config
+                                         }, handlerPopup);
+                                     }
+                                 });
 
 
