@@ -5,13 +5,14 @@
     settings = require('./settings');
 
     client = null;
-   //ÒýÈëmysqlÒýÇæ
+   //ï¿½ï¿½ï¿½ï¿½mysqlï¿½ï¿½ï¿½ï¿½
     mysql = require('mysql');
 
     exports.getDbCon = function() {
         var err;
         try {
             if (client) {
+                console.log("testcon1");
                 client = mysql.createConnection(settings.db);
                 console.log("testcon1");
                 client.connect();
